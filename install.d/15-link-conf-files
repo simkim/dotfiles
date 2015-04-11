@@ -1,0 +1,11 @@
+#!/bin/bash
+ln -sf `pwd`/conf/bashrc ~/.bashrc
+ln -sf `pwd`/conf/bash_aliases ~/.bash_aliases
+ln -sf `pwd`/conf/davmail.properties ~/.davmail.properties
+ln -sf `pwd`/conf/mailcap ~/.mailcap
+ln -sf `pwd`/conf/muttrc ~/.muttrc
+ln -sf `pwd`/conf/tmux.conf ~/.tmux.conf
+ln -sf `pwd`/conf/vimrc ~/.vimrc
+ln -sf `pwd`/conf/Xresources ~/.Xresources
+ln -sf `pwd`/conf/zshrc ~/.zshrc
+ln -sf `pwd`/external/dircolors-solarized/dircolors.256dark ~/.dircolors

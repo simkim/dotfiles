@@ -1,0 +1,193 @@
+" one's upon a time
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Plugin 'majutsushi/tagbar'
+" Plugin 'taglist.vim'
+" vim-flake8
+
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'SirVer/ultisnips'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'benmills/vimux'
+Plugin 'bling/vim-airline'
+Plugin 'ervandew/supertab'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'honza/vim-snippets'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
+Plugin 'mhinz/vim-startify'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'nacitar/terminalkeys.vim'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'scrooloose/syntastic'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'sjl/gundo.vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vimwiki/vimwiki'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'mileszs/ack.vim'
+Plugin 'chrisbra/csv.vim'
+Plugin 'elzr/vim-json'
+"Plugin 'powerline/powerline'
+
+call vundle#end()
+
+"" REMAPPING
+
+" basic remapping
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader><Leader> V
+nnoremap <CR> G
+nnoremap <BS> gg
+map <Leader>b :make<CR>
+
+" tab
+nnoremap <F2> :tabprevious<CR>
+nnoremap <F3> :tabnext<CR>
+
+" quickfix
+nnoremap <F4> :cnext<CR>
+inoremap <F4> <ESC>:cnext<CR>i
+
+" syntax & highlight
+syntax on
+filetype on
+filetype plugin indent on
+
+" syntastic
+
+let g:syntastic_error_symbol = '>'
+let g:syntastic_warning_symbol = '>'
+let g:syntastic_enable_balloons = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_jump = 2
+let g:syntastic_enable_signs = 1
+
+" pymode
+let g:pymode_folding = 0
+
+
+" ctrlp
+
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+" some basic config
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+set number
+set ballooneval          " only available in gvim
+set balloondelay=3       " idem
+set ttyfast
+set laststatus=2
+" pep8
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/.ropeproject/*
+" you will learn one way or another
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" startify
+
+let g:startify_change_to_vcs_root = 1
+let g:startify_bookmarks = [ '~/.vimrc' ]
+let g:startify_files_number = 5
+
+" vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" tagbar
+nmap <F9> :TagbarToggle<CR>
+
+" ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" gundo.vim
+nnoremap <F5> :GundoToggle<CR>
+
+
+" vimux
+nnoremap <F8> :VimuxRunLastCommand<CR>
+nnoremap <S-F8> :VimuxPromptCommand<CR>
+nnoremap <C-F8> :VimuxCloseRunner<CR>
+
+" vim-fugitive
+nnoremap <F12> :Gstatus<CR>
+nnoremap <S-F12> :Gcommit<CR>
+nnoremap <C-F12> :Gpush<CR>
+
+" vim-colors-solarized
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" vim-airline
+let g:airline_theme='solarized'
+" let g:airline_left_sep='>'
+" let g:airline_right_sep=''
+" let g:airline_section_z=''
+let g:airline_powerline_fonts = 1
+
+" vim-easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_move_highlight = 0
+nmap s <Plug>(easymotion-s2)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
+
+" json indent
+
+map <Leader>J :%!python -m json.tool<CR>zi
+
+" nerdtree
+map <Leader>f <plug>NERDTreeTabsToggle<CR>
+nnoremap <F6> :NERDTreeTabsToggle<CR>
+
+" sudo
+cnoremap sudow w !sudo tee % >/dev/null
+
+
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki'
+let wiki_2 = {}
+let wiki_2.path = '~/Prive/vimwiki'
+let g:vimwiki_list = [wiki_1, wiki_2]
+
+set viminfo='100,n$HOME/.vim/files/info/viminfo
+
+

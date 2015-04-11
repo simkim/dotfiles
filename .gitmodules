@@ -1,0 +1,6 @@
+[submodule "external/dircolors-solarized"]
+	path = external/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "external/powerline-fonts"]
+	path = external/powerline-fonts
+	url = https://github.com/powerline/fonts
