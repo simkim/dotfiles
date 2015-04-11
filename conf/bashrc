@@ -155,6 +155,9 @@ shopt -s cmdhist
 # Don't use PATH to find files to source
 shopt -u sourcepath
 
+if [ -e ~/.Xressources ] ; then
+    xrdb -merge ~/.Xressources
+fi
 # Load any supplementary scripts
 if [[ -d $HOME/.bashrc.d ]] ; then
 	for config in "$HOME"/.bashrc.d/*.bash ; do
