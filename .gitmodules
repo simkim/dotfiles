@@ -4,3 +4,6 @@
 [submodule "external/powerline-fonts"]
 	path = external/powerline-fonts
 	url = https://github.com/powerline/fonts
+[submodule "external/awesome-solarized"]
+	path = external/awesome-solarized
+	url = https://github.com/simkim/awesome-solarized

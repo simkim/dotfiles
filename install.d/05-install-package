@@ -1,8 +1,10 @@
 #!/bin/bash
 
+. lib.sh
+
 if [ -e "/usr/bin/apt-get" ]; then
     sudo apt-get update
     sudo apt-get -y install git vim-gnome tmux ctags awesome
 else
-    echo "$0 : package manager not supported"
+    log_info "$0 : package manager not supported"
 fi

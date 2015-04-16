@@ -28,6 +28,8 @@ VIOLET=$(tput setaf 61)
 BLUE=$(tput setaf 33)
 CYAN=$(tput setaf 37)
 GREEN=$(tput setaf 64) 
+BOLD=$(tput bold)
+RESET=$(tput sgr0) 
 
 parse_git_dirty () {
     [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
@@ -37,7 +39,7 @@ parse_git_branch () {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 } 
 
-PS1="\[$ORANGE\]\h\[$BASE0\]:\[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" 📂\")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\$ \[$RESET\]"
+PS1="\[$ORANGE\]\h\[$BASE0\]:\[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"$BOLD 📂 \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\$ \[$RESET\]"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

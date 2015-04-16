@@ -1,5 +1,8 @@
 #!/bin/bash
 
+. lib.sh
+
+echo -n $BASE01
 cd external/powerline-fonts && ./install.sh
 
 # Configure gnome-terminal
@@ -7,3 +10,5 @@ cd external/powerline-fonts && ./install.sh
 if hash gconftool-2 2>/dev/null; then
     gconftool-2 -t string --set '/apps/gnome-terminal/profiles/Default/font' "Source Code Pro for Powerline Medium 12"
 fi
+
+echo -n $RESET

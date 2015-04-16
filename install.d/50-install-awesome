@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ ! -d ~/.config/awesome/themes/awesome-solarized ] ; then
+    mkdir -p ~/.config/awesome/themes
+    ln -s `pwd`/external/awesome-solarized ~/.config/awesome/themes/awesome-solarized
+fi
+
+if [ ! -e ~/.config/awesome/rc.lua ] ; then
+    if [ -e conf/rc.lua.`hostname` ]; then
+        ln -s "`pwd`/conf/rc.lua.`hostname`" ~/.config/awesome/rc.lua
+    else
+        ln -s "`pwd`conf/rc.lua" ~/.config/awesome/rc.lua
+    fi
+fi

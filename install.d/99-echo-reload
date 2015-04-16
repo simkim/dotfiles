@@ -1,6 +1,8 @@
 #!/bin/bash
 
+. lib.sh
+
 source ~/.bashrc
 
-echo "To activate your environment in the current running terminal you may need to : "
-echo "source ~/.bashrc"
+echo "${ORANGE}${BOLD}To activate your environment in the current running terminal you may need to : "
+echo "source ~/.bashrc${RESET}"

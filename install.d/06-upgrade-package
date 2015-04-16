@@ -1,7 +1,9 @@
 #!/bin/bash
 
+. lib.sh
+
 if [ -e "/usr/bin/apt-get" ]; then
     sudo apt-get upgrade
 else
-    echo "$0 : package manager not supported"
+    log_info "$0 : package manager not supported"
 fi
