@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ln -sf `pwd`/conf/bashrc ~/.bashrc
 ln -sf `pwd`/conf/bash_aliases ~/.bash_aliases
 ln -sf `pwd`/conf/davmail.properties ~/.davmail.properties

@@ -1,2 +1,7 @@
 #!/bin/bash
-sudo apt-get upgrade
+
+if [ -e "/usr/bin/apt-get" ]; then
+    sudo apt-get upgrade
+else
+    echo "$0 : package manager not supported"
+fi
