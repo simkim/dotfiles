@@ -39,7 +39,7 @@ parse_git_branch () {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 } 
 
-PS1="\[$ORANGE\]\h\[$BASE0\]:\[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"$BOLD 📂 \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\$ \[$RESET\]"
+PS1="\[$ORANGE\]\h\[$BASE0\]:\[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"$BOLD  \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\$ \[$RESET\]"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -116,6 +116,10 @@ shopt -u sourcepath
 
 if [ -e ~/.Xressources ] ; then
     xrdb -merge ~/.Xressources
+fi
+
+if [ -e /usr/share/autojump/autojump.sh ]; then
+    .  /usr/share/autojump/autojump.sh
 fi
 
 # Load any supplementary scripts
