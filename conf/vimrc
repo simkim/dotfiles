@@ -105,6 +105,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/.ropeproject/*
+set wildignore+=*.class,*.iml,*/build/*
 " you will learn one way or another
 noremap <left> <nop>
 noremap <right> <nop>
@@ -180,7 +181,7 @@ map <Leader>J :%!python -m json.tool<CR>zi
 
 " nerdtree
 map <Leader>f <plug>NERDTreeTabsToggle<CR>
-nnoremap <F6> :NERDTreeTabsToggle<CR>
+nnoremap <F6> :NERDTreeTabsOpen<CR>
 
 " sudo
 cnoremap sudow w !sudo tee % >/dev/null
