@@ -1,10 +1,12 @@
 #!/bin/bash
 
 . lib.sh
-
 if [ -e "/usr/bin/apt-get" ]; then
     sudo apt-get update
     sudo apt-get -y install git vim-gnome tmux ctags awesome autojump
+elif [ -e /Users ]; then
+	brew update
+	brew install git tmux ctags
 else
     log_info "$0 : package manager not supported"
 fi

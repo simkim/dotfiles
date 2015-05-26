@@ -4,6 +4,8 @@
 
 if [ -e "/usr/bin/apt-get" ]; then
     sudo apt-get upgrade
+elif [ -e /Users ]; then
+	brew upgrade --all
 else
     log_info "$0 : package manager not supported"
 fi
