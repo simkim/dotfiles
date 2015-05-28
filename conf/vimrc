@@ -58,6 +58,9 @@ map <Leader>b :make<CR>
 nnoremap <F2> :tabprevious<CR>
 nnoremap <F3> :tabnext<CR>
 
+nnoremap <Leader>tp :tabm -1<CR>
+nnoremap <Leader>tn :tabm +1<CR>
+
 " quickfix
 nnoremap <F4> :cnext<CR>
 inoremap <F4> <ESC>:cnext<CR>i
@@ -195,4 +198,9 @@ let g:vimwiki_list = [wiki_1, wiki_2]
 
 set viminfo='100,n$HOME/.vim/files/info/viminfo
 
+augroup filetypedetect
+au! BufRead,BufNewFile *.m       setfiletype objc
+augroup END
+
+let g:syntastic_objc_compiler_options = "-MMD -MP -DGNUSTEP -DGNUSTEP_BASE_LIBRARY=1 -DGNU_GUI_LIBRARY=1 -DGNU_RUNTIME=1 -DGNUSTEP_BASE_LIBRARY=1 -fno-strict-aliasing -fexceptions -fobjc-exceptions -D_NATIVE_OBJC_EXCEPTIONS -fPIC -Wall -DGSWARN -DGSDIAGNOSE -Wno-import -g -O2 -fstack-protector --param=ssp-buffer-size=4 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security -fgnu-runtime -fconstant-string-class=NSConstantString -I. -I/home/simkim/GNUstep/Library/Headers -I/usr/local/include/GNUstep -I/usr/include/GNUstep"
 
