@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+. lib.sh
+
+if [ ! -e "/usr/bin/sudo" ]; then
+if [ -e "/usr/bin/apt-get" ]; then
+	su -c "apt-get install sudo"
+else
+    log_info "$0 : package manager not supported"
+fi
+fi
+if [ -e "/etc/sudoers.d/" -a ! -e "/etc/sudoers.d/simkim"  ]; then 
+	su -c 'echo "%simkim   ALL = NOPASSWD: ALL" > /etc/sudoers.d/simkim'
+fi
