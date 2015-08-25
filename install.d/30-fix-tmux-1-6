@@ -1,6 +1,7 @@
 #!/bin/bash
-
+set -e
 if `tmux -V | grep -q 1.6` ; then
+    rm ~/.tmux.conf
     cp conf/tmux.conf ~/.tmux.conf
     sed -i "s/.*status-separator.*//" ~/.tmux.conf
 fi
