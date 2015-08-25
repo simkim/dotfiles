@@ -1,3 +1,4 @@
 #!/bin/bash
 git config --global user.name "Gauthier Monserand"
 git config --global user.email simkim@simkim.net 
+git config --global push.default simple

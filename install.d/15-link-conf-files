@@ -10,4 +10,6 @@ ln -sf `pwd`/conf/vimrc ~/.vimrc
 ln -sf `pwd`/conf/Xresources ~/.Xresources
 ln -sf `pwd`/conf/zshrc ~/.zshrc
 ln -sf `pwd`/external/dircolors-solarized/dircolors.256dark ~/.dircolors
+mkdir -p ~/.vim/
+ln -sf `pwd`/conf/Ultisnips ~/.vim/Ultisnips
 touch ~/.hushlogin
