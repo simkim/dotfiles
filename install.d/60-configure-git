@@ -3,3 +3,4 @@ git config --global user.name "Gauthier Monserand"
 git config --global user.email simkim@simkim.net 
 git config --global push.default simple
 git config --global alias.co checkout
+git config --global core.excludesfile '~/.gitignore'
