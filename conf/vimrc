@@ -9,6 +9,7 @@ call vundle#begin()
 " Plugin 'taglist.vim'
 " vim-flake8
 
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'SirVer/ultisnips'
