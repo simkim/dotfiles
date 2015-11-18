@@ -43,6 +43,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mileszs/ack.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'elzr/vim-json'
+Plugin 'lmeijvogel/vim-yaml-helper'
 "Plugin 'powerline/powerline'
 
 call vundle#end()
