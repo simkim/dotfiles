@@ -10,3 +10,5 @@ alias diff='diff -u'
 # Don't print the GDB copyright message on every invocation
 alias gdb='gdb -q'
 
+# Print color
+alias less="less -R"
