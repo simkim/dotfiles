@@ -5,10 +5,10 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugin 'majutsushi/tagbar'
 " Plugin 'taglist.vim'
 " vim-flake8
 
+Plugin 'majutsushi/tagbar'
 Plugin 'kshenoy/vim-signature'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -44,6 +44,9 @@ Plugin 'mileszs/ack.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'elzr/vim-json'
 Plugin 'lmeijvogel/vim-yaml-helper'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'fatih/vim-go'
+
 "Plugin 'powerline/powerline'
 
 call vundle#end()
@@ -208,3 +211,4 @@ augroup END
 
 let g:syntastic_objc_compiler_options = "-MMD -MP -DGNUSTEP -DGNUSTEP_BASE_LIBRARY=1 -DGNU_GUI_LIBRARY=1 -DGNU_RUNTIME=1 -DGNUSTEP_BASE_LIBRARY=1 -fno-strict-aliasing -fexceptions -fobjc-exceptions -D_NATIVE_OBJC_EXCEPTIONS -fPIC -Wall -DGSWARN -DGSDIAGNOSE -Wno-import -g -O2 -fstack-protector --param=ssp-buffer-size=4 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security -fgnu-runtime -fconstant-string-class=NSConstantString -I. -I/home/simkim/GNUstep/Library/Headers -I/usr/local/include/GNUstep -I/usr/include/GNUstep"
 
+let vim_markdown_preview_hotkey='<C-m>'

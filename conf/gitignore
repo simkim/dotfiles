@@ -1,2 +1,4 @@
 *.swp
 *.log
+.rake_tasks~
+SOURCEME.pgsql.sh
