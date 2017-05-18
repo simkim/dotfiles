@@ -5,7 +5,7 @@ set -e
 . lib.sh
 if [ -e "/usr/bin/apt-get" ]; then
     sudo apt-get update
-    sudo apt-get -y install git vim-gnome tmux ctags awesome autojump curl tcpdump
+    sudo apt-get -y install git gitk vim-gnome tmux ctags awesome autojump curl tcpdump sshfs
 elif [ -e /Users ]; then
 	brew update
 	brew install git tmux ctags gnupg vim
