@@ -8,7 +8,10 @@ if [ -e "/usr/bin/apt-get" ]; then
     sudo apt-get -y install git gitk vim-gnome tmux ctags awesome autojump curl tcpdump sshfs
 elif [ -e /Users ]; then
 	brew update
-	brew install git tmux ctags gnupg vim
+	brew install git tmux ctags gnupg vim postgresql ansible nodejs yarn
+    brew install caskroom/cask heroku/brew/heroku
+    brew cask install atom google-chrome slack dashlane giigke-drive-file-stream firefox gimp vagrant virtualbox virtualbox-extension-pack packer appcleaner
+    apm install --packages-file conf/atom-packages.txt
 else
     log_info "$0 : package manager not supported"
 fi
